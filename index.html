@@ -50,7 +50,7 @@
         }
 
         .logo {
-            max-width: 120px; /* Menyesuaikan ukuran logo */
+            max-width: 120px;
             display: block;
             margin: 0 10px;
         }
@@ -76,7 +76,7 @@
             background-color: #fafafa;
             box-sizing: border-box;
             transition: all 0.3s ease;
-            min-width: 150px; /* Menambahkan lebar minimum untuk menghindari input mengecil terlalu kecil */
+            min-width: 150px;
         }
 
         .form-group input:focus, .form-group textarea:focus {
@@ -164,7 +164,7 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
-        
+
         .description {
             margin-top: 40px;
             text-align: left;
@@ -249,9 +249,11 @@
             // Menyembunyikan form agar tidak terlihat setelah submit
             document.getElementById("registrationForm").style.display = "none";
             
-            // Mengirimkan form ke Google Form
-            var form = document.getElementById("registrationFormData");
-            form.submit(); // Kirim form secara normal
+            // Menunda pengiriman form ke Google Form agar modal bisa muncul terlebih dahulu
+            setTimeout(function() {
+                var form = document.getElementById("registrationFormData");
+                form.submit(); // Kirim form secara normal
+            }, 500); // Delay 500ms untuk memberi waktu menampilkan modal
             
             return false; // Mencegah refresh halaman setelah submit
         }

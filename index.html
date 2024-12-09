@@ -268,8 +268,8 @@
         <img src="images/ml.png" alt="Logo" class="logo">
 
         <!-- Formulir Pendaftaran -->
-            <form id="registrationFormData" action="https://docs.google.com/forms/d/e/1FAIpQLSd4G5YtkUy4gVcd6BZ8VBF0lmbMY95eVxn-kbrxHAk_9RFXfw/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)">            <!-- Nama Kelas -->
-                  <!-- Nama Kelas -->
+            <form id="registrationFormData" action="https://docs.google.com/forms/d/e/1FAIpQLSd4G5YtkUy4gVcd6BZ8VBF0lmbMY95eVxn-kbrxHAk_9RFXfw/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)">
+                       <!-- Nama Kelas -->
             <div class="form-group">
                 <label for="class">Nama Kelas</label>
                 <input type="text" id="class" name="entry.1789437629" placeholder="Contoh: XII A" required oninput="resizeInput(this)">
@@ -313,19 +313,27 @@
 
     <script>
         function handleSubmit(event) {
-    event.preventDefault();  // Mencegah pengiriman form
+        // Mencegah form untuk dikirim secara langsung
+        event.preventDefault(); 
 
-    // Menampilkan modal pop-up
-    document.getElementById("confirmationModal").style.display = "block";
-    document.getElementById("registrationFormData").style.display = "none";
+        // Menampilkan modal pop-up
+        document.getElementById("confirmationModal").style.display = "block"; // Menampilkan pop-up
+        
+        // Menyembunyikan form agar tidak terlihat setelah submit
+        document.getElementById("registrationForm").style.display = "none";
+        
+        // Menunda pengiriman form ke Google Form agar modal bisa muncul terlebih dahulu
+        setTimeout(function() {
+            var form = document.getElementById("registrationFormData");
+            form.submit(); // Kirim form secara normal ke Google Form
+        }, 500); // Delay 500ms untuk memberi waktu menampilkan modal
+    }
 
-    // Data form dapat dikirim dengan AJAX jika diinginkan
-    // Namun, jika ingin form benar-benar disubmit setelah modal, lakukan pengiriman berikut setelah klik OK
-}
+    function refreshPage() {
+        // Refresh halaman setelah klik OK pada modal
+        window.location.href = 'register.html'; // Ganti dengan alamat halaman yang diinginkan
+    }
 
-function refreshPage() {
-    location.reload();
-}
 
 
 

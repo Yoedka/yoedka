@@ -268,8 +268,8 @@
         <img src="images/ml.png" alt="Logo" class="logo">
 
         <!-- Formulir Pendaftaran -->
-        <form id="registrationFormData" action="https://docs.google.com/forms/d/e/1FAIpQLSd4G5YtkUy4gVcd6BZ8VBF0lmbMY95eVxn-kbrxHAk_9RFXfw/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleSubmit()">
-            <!-- Nama Kelas -->
+            <form id="registrationFormData" action="https://docs.google.com/forms/d/e/1FAIpQLSd4G5YtkUy4gVcd6BZ8VBF0lmbMY95eVxn-kbrxHAk_9RFXfw/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)">            <!-- Nama Kelas -->
+                  <!-- Nama Kelas -->
             <div class="form-group">
                 <label for="class">Nama Kelas</label>
                 <input type="text" id="class" name="entry.1789437629" placeholder="Contoh: XII A" required oninput="resizeInput(this)">
@@ -312,24 +312,21 @@
     
 
     <script>
-        function handleSubmit() {
-            // Menampilkan modal pop-up
-            document.getElementById("confirmationModal").style.display = "block";
-            document.getElementById("registrationFormData").style.display = "none";
-            
-            var form = document.getElementById("registrationFormData");
-            form.submit();
-            
-            return false;
-        }
+        function handleSubmit(event) {
+    event.preventDefault();  // Mencegah pengiriman form
 
-        function refreshPage() {
-            location.reload();
-        }
-        function refreshPage() {
-            // Refresh halaman setelah klik OK pada modal
-            location.reload();
-        }
+    // Menampilkan modal pop-up
+    document.getElementById("confirmationModal").style.display = "block";
+    document.getElementById("registrationFormData").style.display = "none";
+
+    // Data form dapat dikirim dengan AJAX jika diinginkan
+    // Namun, jika ingin form benar-benar disubmit setelah modal, lakukan pengiriman berikut setelah klik OK
+}
+
+function refreshPage() {
+    location.reload();
+}
+
 
 
         // Fungsi untuk menyesuaikan lebar input Nama Kelas berdasarkan panjang teks

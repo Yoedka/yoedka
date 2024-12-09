@@ -314,20 +314,18 @@
     <script>
         function handleSubmit() {
             // Menampilkan modal pop-up
-            document.getElementById("confirmationModal").style.display = "block"; // Menampilkan pop-up
-            
-            // Menyembunyikan form agar tidak terlihat setelah submit
+            document.getElementById("confirmationModal").style.display = "block";
             document.getElementById("registrationForm").style.display = "none";
             
-            // Menunda pengiriman form ke Google Form agar modal bisa muncul terlebih dahulu
-            setTimeout(function() {
-                var form = document.getElementById("registrationFormData");
-                form.submit(); // Kirim form secara normal
-            }, 500); // Delay 500ms untuk memberi waktu menampilkan modal
+            var form = document.getElementById("registrationFormData");
+            form.submit();
             
-            return false; // Mencegah refresh halaman setelah submit
+            return false;
         }
 
+        function refreshPage() {
+            location.reload();
+        }
         function refreshPage() {
             // Refresh halaman setelah klik OK pada modal
             location.reload();

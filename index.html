@@ -6,7 +6,7 @@
     <meta name="description" content="Pendaftaran lomba sekolah, isi formulir untuk ikut lomba dan dapatkan informasi lebih lanjut.">
     <meta property="og:title" content="Pendaftaran Lomba">
     <meta property="og:description" content="Daftarkan diri Anda untuk mengikuti lomba dengan mengisi formulir ini.">
-    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:image" content="images/logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pendaftaran Lomba">
     <meta name="twitter:description" content="Daftarkan diri Anda untuk lomba ini sekarang!">
@@ -257,7 +257,7 @@
     <header>
         <div class="title">Pendaftaran Lomba</div>
         <div class="logo-container">
-            <img src="image/logo.png" alt="Logo 1">
+            <img src="images/logo.png" alt="Logo 1">
             <img src="images/logo1.png" alt="Logo 2">
             <img src="images/logo2.png" alt="Logo 3">
         </div>
@@ -321,18 +321,25 @@
     <script>
         function handleSubmit() {
             // Menampilkan modal pop-up
-            document.getElementById("confirmationModal").style.display = "block";
+            document.getElementById("confirmationModal").style.display = "block"; // Menampilkan pop-up
+            
+            // Menyembunyikan form agar tidak terlihat setelah submit
             document.getElementById("registrationForm").style.display = "none";
             
-            var form = document.getElementById("registrationFormData");
-            form.submit();
+            // Menunda pengiriman form ke Google Form agar modal bisa muncul terlebih dahulu
+            setTimeout(function() {
+                var form = document.getElementById("registrationFormData");
+                form.submit(); // Kirim form secara normal
+            }, 500); // Delay 500ms untuk memberi waktu menampilkan modal
             
-            return false;
+            return false; // Mencegah refresh halaman setelah submit
         }
 
         function refreshPage() {
+            // Refresh halaman setelah klik OK pada modal
             location.reload();
         }
+
 
         // Fungsi untuk menyesuaikan lebar input Nama Kelas berdasarkan panjang teks
         function resizeInput(input) {

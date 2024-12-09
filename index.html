@@ -168,7 +168,7 @@
         }
 
         .form-group input, .form-group textarea {
-            width: auto;
+            width: 100%;
             min-width: 120px;
             padding: 12px 16px;
             font-size: 1.1em;
@@ -309,7 +309,15 @@
         </div>
     </div>
 
-    
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/osim_mansibolga/" target="_blank" title="Instagram OSIM"><img src="images/instagram-icon.png" alt="Instagram"></a>
+            <a href="https://www.instagram.com/mpk_mansibolga/" target="_blank" title="Instagram MPK"><img src="images/instagram-icon.png" alt="Instagram"></a>
+            <a href="https://www.instagram.com/man.sibolga/" target="_blank" title="Instagram MAN Sibolga"><img src="images/instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
     <script>
         function handleSubmit() {
             // Menampilkan modal pop-up
@@ -328,7 +336,7 @@
 
         // Fungsi untuk menyesuaikan lebar input Nama Kelas berdasarkan panjang teks
         function resizeInput(input) {
-            input.style.width = Math.max(input.value.length + 1, 12) + "ch"; // Menjamin lebar minimal 12 karakter
+            input.style.width = Math.max(input.value.length + 1, 10) + "ch"; // Menjamin lebar minimal 12 karakter
         }
     </script>
 

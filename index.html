@@ -24,7 +24,7 @@
             transform: translateY(0);
             animation: slideIn 0.5s ease-out;
         }
-        
+
         @keyframes slideIn {
             0% {
                 transform: translateY(50px);
@@ -41,6 +41,18 @@
             color: #333;
             margin-bottom: 20px;
             font-weight: 600;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 120px; /* Menyesuaikan ukuran logo */
+            display: block;
+            margin: 0 10px;
         }
 
         .form-group {
@@ -64,6 +76,7 @@
             background-color: #fafafa;
             box-sizing: border-box;
             transition: all 0.3s ease;
+            min-width: 150px; /* Menambahkan lebar minimum untuk menghindari input mengecil terlalu kecil */
         }
 
         .form-group input:focus, .form-group textarea:focus {
@@ -151,24 +164,38 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
-
-        /* Logo styling */
-        .logo {
-            max-width: 150px; /* Menyesuaikan ukuran logo */
-            margin-bottom: 20px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        
+        .description {
+            margin-top: 40px;
+            text-align: left;
+            font-size: 1.1em;
+            color: #333;
         }
+
+        .contact-link {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="container" id="registrationForm">
-        <!-- Logo -->
-        <img src="images/logo.png" alt="Logo" class="logo">
-        
+        <!-- Logo section -->
+        <div class="logos">
+            <img src="images/logo.png" alt="Logo 1" class="logo">
+            <img src="images/logo1.png" alt="Logo 2" class="logo">
+            <img src="images/logo2.png" alt="Logo 3" class="logo">
+        </div>
+
         <h1>Pendaftaran Lomba</h1>
+
         <form id="registrationFormData" action="https://docs.google.com/forms/d/e/1FAIpQLSd4G5YtkUy4gVcd6BZ8VBF0lmbMY95eVxn-kbrxHAk_9RFXfw/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleSubmit()">
             
             <!-- Nama Kelas -->
@@ -189,6 +216,20 @@
         
         <!-- Hidden iframe untuk pengiriman data -->
         <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+        <!-- Deskripsi Cara Pendaftaran -->
+        <div class="description">
+            <h2>Cara Mendaftar</h2>
+            <p>Untuk mendaftar lomba ini, ikuti langkah-langkah berikut:</p>
+            <ol>
+                <li><strong>Isi Formulir Pendaftaran:</strong> Pada kolom pertama, masukkan <em>Nama Kelas</em> seperti "XII A". Pada kolom kedua, masukkan <em>Nama Peserta</em> lengkap Anda.</li>
+                <li><strong>Periksa Data Anda:</strong> Pastikan informasi yang dimasukkan sudah benar.</li>
+                <li><strong>Klik Tombol "Daftar Sekarang":</strong> Setelah memeriksa kembali, klik tombol "Daftar Sekarang" untuk mengirimkan formulir.</li>
+                <li><strong>Konfirmasi Pendaftaran:</strong> Setelah formulir terkirim, Anda akan melihat pop-up konfirmasi. Klik tombol "OK" untuk melanjutkan.</li>
+                <li><strong>Halaman Akan Diperbarui:</strong> Setelah klik "OK", halaman ini akan otomatis diperbarui dan pendaftaran Anda telah berhasil.</li>
+            </ol>
+            <p>Jika Anda membutuhkan bantuan, <a href="https://wa.me/6281234567890" class="contact-link" target="_blank">hubungi panitia lomba di WhatsApp</a>.</p>
+        </div>
     </div>
 
     <!-- Modal Pop-up -->

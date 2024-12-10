@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="description" content="Daftar lomba di sekolah kami. Daftarkan diri Anda di berbagai lomba seru, seperti ML, Mansib Got Talent, dan Cerdas Cermat.">
+    <meta name="description" content="Daftar lomba di sekolah kami. Daftarkan diri Anda di berbagai lomba seru, seperti Mobile Legends, Pertanyaan Rebutan, Kaligrafi, Wajah Kerucut, dan Man Sibolga Got Talent.">
     <meta property="og:title" content="Daftar Lomba Sekolah">
-    <meta property="og:description" content="Ikuti lomba-lomba seru di sekolah kami seperti ML, Mansib Got Talent, dan Cerdas Cermat. Daftar sekarang!">
+    <meta property="og:description" content="Ikuti lomba-lomba seru di sekolah kami seperti Mobile Legends, Pertanyaan Rebutan, Kaligrafi, Wajah Kerucut, dan Man Sibolga Got Talent. Daftar sekarang!">
     <meta property="og:image" content="images/og-image.jpg">
     <title>Daftar Lomba Sekolah</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -20,8 +20,23 @@
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 20px;
+            padding: 10px 20px;
             text-align: center;
+        }
+
+        .title {
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        .logo-container {
+            margin-top: 10px;
+        }
+
+        .logo-container img {
+            width: 80px;
+            margin: 0 10px;
+            vertical-align: middle;
         }
 
         .container {
@@ -90,41 +105,58 @@
 
     <!-- Header -->
     <header>
-        <h1>Selamat Datang di Pendaftaran Lomba Sekolah</h1>
-        <p>Daftarkan diri Anda untuk mengikuti lomba-lomba seru di sekolah kami!</p>
+        <div class="title">Pendaftaran Lomba</div>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo 1">
+            <img src="images/logo1.png" alt="Logo 2">
+            <img src="images/logo2.png" alt="Logo 3">
+        </div>
     </header>
 
     <!-- Main Content -->
     <div class="container">
-        <!-- Lomba ML -->
+        <!-- Lomba Mobile Legends -->
         <div class="contest">
-            <img src="images/ml.png" alt="ML Logo">
-            <h3>ML (Mobile Legends)</h3>
-            <p>Lomba game Mobile Legends untuk para pecinta esports. Buktikan kehebatan tim Anda!</p>
-            <a href="regis-ml.html" class="btn">Daftar Lomba ML</a>
+            <img src="images/ml.png" alt="Logo Mobile Legends">
+            <h3>Mobile Legends</h3>
+            <p>Lomba game Mobile Legends untuk para pecinta esports. Buktikan kehebatan tim Anda dan rebut juara pertama!</p>
+            <a href="regis-ml.html" class="btn">Daftar Disini</a>
         </div>
 
-        <!-- Lomba Mansib Got Talent -->
+        <!-- Lomba Pertanyaan Rebutan -->
         <div class="contest">
-            <img src="images/mgt-logo.png" alt="Mansib Got Talent Logo">
-            <h3>Mansib Got Talent</h3>
-            <p>Unjuk bakat di berbagai bidang seperti menyanyi, menari, atau bermain alat musik. Jangan lewatkan kesempatan ini!</p>
-            <a href="pendaftaran.html" class="btn">Daftar Lomba Mansib Got Talent</a>
+            <img src="images/pertanyaan-rebutan.png" alt="Logo Pertanyaan Rebutan">
+            <h3>Pertanyaan Rebutan</h3>
+            <p>Tantang pengetahuanmu dalam lomba pertanyaan rebutan. Bersaing dengan teman-temanmu untuk menjadi yang tercepat dan terakurat!</p>
+            <a href="regis-pertanyaan.html" class="btn">Daftar Disini</a>
         </div>
 
-        <!-- Lomba Cerdas Cermat -->
+        <!-- Lomba Kaligrafi -->
         <div class="contest">
-            <img src="images/cc-logo.png" alt="Cerdas Cermat Logo">
-            <h3>Cerdas Cermat</h3>
-            <p>Tantang pengetahuanmu dalam lomba Cerdas Cermat. Bersaing dengan teman-temanmu dalam berbagai topik menarik!</p>
-            <a href="pendaftaran.html" class="btn">Daftar Lomba Cerdas Cermat</a>
+            <img src="images/kaligrafi.png" alt="Logo Kaligrafi">
+            <h3>Kaligrafi</h3>
+            <p>Tunjukkan keindahan tulisan tangan Anda dalam lomba kaligrafi. Kompetisi ini menguji ketelitian dan keindahan seni menulis!</p>
+            <a href="regis-kaligrafi.html" class="btn">Daftar Disini</a>
+        </div>
+
+        <!-- Lomba Wajah Kerucut -->
+        <div class="contest">
+            <img src="images/wajah-kerucut.png" alt="Logo Wajah Kerucut">
+            <h3>Wajah Kerucut</h3>
+            <p>Tunjukkan kekompakan dalam tim untuk mengumpulkan bola.!</p>
+            <a href="regis-wajah-kerucut.html" class="btn">Daftar Disini</a>
+        </div>
+
+        <!-- Lomba Man Sibolga Got Talent -->
+        <div class="contest">
+            <img src="images/mansibolga-talent.png" alt="Logo Man Sibolga Got Talent">
+            <h3>Man Sibolga Got Talent</h3>
+            <p>Unjuk bakat di berbagai bidang seperti menyanyi, menari, atau bermain alat musik. Jangan lewatkan kesempatan ini untuk menjadi bintang!</p>
+            <a href="regis-mansibolga.html" class="btn">Daftar Disini </a>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Lomba Sekolah | Semua Hak Dilindungi</p>
-    </footer>
+    
 
 </body>
 </html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+    <meta name="description" content="Pendaftaran lomba sekolah, isi formulir untuk ikut lomba dan dapatkan informasi lebih lanjut.">
+
+    <meta property="og:title" content="Pendaftaran Lomba">
+
+    <meta property="og:description" content="Daftarkan diri Anda untuk mengikuti lomba dengan mengisi formulir ini.">
+
+    <meta property="og:image" content="images/logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Pendaftaran Lomba">
+
+    <meta name="twitter:description" content="Daftarkan diri Anda untuk lomba ini sekarang!">
+
+    <title>Pendaftaran Lomba</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+
+            font-family: 'Poppins', sans-serif;
+
+            background-color: #f4f7fa;
+
+            margin: 0;
+
+            padding: 0;
+
+            overflow-x: hidden;
+
+            padding-bottom: 60px;
+
+        }
+
+
+
+        /* Header */
+
+        header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            background-color: #4CAF50;
+
+            color: white;
+
+            padding: 10px 20px;
+
+            font-size: 1.2em;
+
+            font-weight: bold;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+        }
+
+
+
+        /* Teks header di kiri */
+
+        header .title {
+
+            font-size: 1.2em;
+
+        }
+
+
+
+        /* Logo di kanan */
+
+        header .logo-container {
+
+            display: flex;
+
+            gap: 15px;
+
+        }
+
+
+
+        header .logo-container img {
+
+            width: 30px; /* Mengurangi ukuran logo */
+
+            height: auto;
+
+        }
+
+
+
+        /* Logo tengah */
+
+        .logo {
+
+            width: 200px; /* Memperbesar logo */
+
+            height: auto;
+
+            margin-bottom: 30px;
+
+        }
+
+
+
+        /* Footer */
+
+        footer {
+
+            background-color: #4CAF50;
+
+            color: white;
+
+            padding: 20px;
+
+            text-align: center;
+
+            font-size: 1em;
+
+            position: sticky;
+
+            bottom: 0;
+
+            width: 100%;
+
+        }
+
+
+
+        /* Kontainer untuk logo sosial media */
+
+        footer .social-icons {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 20px;
+
+        }
+
+
+
+        /* Setiap ikon sosial media */
+
+        footer .social-icons a {
+
+            display: block;
+
+            width: 35px;
+
+            height: 35px;
+
+        }
+
+
+
+        /* Ukuran dan efek hover untuk ikon */
+
+        footer .social-icons img {
+
+            width: 100%;
+
+            height: auto;
+
+            transition: transform 0.2s ease;
+
+        }
+
+
+
+        footer .social-icons img:hover {
+
+            transform: scale(1.1);
+
+        }
+
+
+
+        footer .social-icons a[title] {
+
+            position: relative;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+
+
+        footer .social-icons a[title]:after {
+
+            content: attr(title);
+
+            position: absolute;
+
+            top: 45px;
+
+            font-size: 0.8em;
+
+            color: white;
+
+            background-color: #4CAF50;
+
+            padding: 5px 10px;
+
+            border-radius: 5px;
+
+            opacity: 0;
+
+            transition: opacity 0.3s ease;
+
+        }
+
+
+
+        footer .social-icons a[title]:hover:after {
+
+            opacity: 1;
+
+        }
+
+
+
+        .container {
+
+            width: 100%;
+
+            max-width: 600px;
+
+            margin: 50px auto;
+
+            padding: 30px;
+
+            background-color: #fff;
+
+            border-radius: 15px;
+
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+            text-align: center;
+
+            box-sizing: border-box;
+
+            animation: slideIn 0.5s ease-out;
+
+        }
+
+
+
+        @keyframes slideIn {
+
+            0% {
+
+                transform: translateY(50px);
+
+                opacity: 0;
+
+            }
+
+            100% {
+
+                transform: translateY(0);
+
+                opacity: 1;
+
+            }
+
+        }
+
+
+
+        h1 {
+
+            font-size: 1.8em;
+
+            color: #333;
+
+            margin-bottom: 20px;
+
+            font-weight: 600;
+
+        }
+
+
+
+        .form-group {
+
+            margin-bottom: 20px;
+
+            text-align: left;
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        .form-group label {
+
+            font-size: 1em;
+
+            color: #333;
+
+            margin-bottom: 8px;
+
+            display: block;
+
+        }
+
+
+
+        .form-group input, .form-group textarea {
+
+            width: 100%;
+
+            min-width: 120px;
+
+            padding: 12px 16px;
+
+            font-size: 1.1em;
+
+            border-radius: 8px;
+
+            border: 1px solid #ddd;
+
+            background-color: #fafafa;
+
+            box-sizing: border-box;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .form-group input:focus, .form-group textarea:focus {
+
+            border-color: #4CAF50;
+
+            background-color: #fff;
+
+            outline: none;
+
+        }
+
+
+
+        .btn {
+
+            width: 100%;
+
+            padding: 14px;
+
+            font-size: 1.2em;
+
+            background-color: #4CAF50;
+
+            color: #fff;
+
+            border: none;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s ease, transform 0.2s ease;
+
+            font-weight: 600;
+
+        }
+
+
+
+        .btn:hover {
+
+            background-color: #45a049;
+
+            transform: translateY(-3px);
+
+        }
+
+
+
+        .modal-content {
+
+            background-color: #fff;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+
+            text-align: center;
+
+        }
+
+
+
+        .modal-content h2 {
+
+            color: #4CAF50;
+
+            font-size: 2em;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .modal-content button {
+
+            padding: 12px 20px;
+
+            background-color: #4CAF50;
+
+            color: #fff;
+
+            font-size: 1.1em;
+
+            border: none;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s ease, transform 0.2s ease;
+
+        }
+
+
+
+        .modal-content button:hover {
+
+            background-color: #45a049;
+
+            transform: translateY(-3px);
+
+        }
+
+
+
+        #confirmationModal {
+
+            display: none;
+
+            position: fixed;
+
+            z-index: 1000;
+
+            left: 0;
+
+            top: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background-color: rgba(0, 0, 0, 0.5);
+
+            animation: fadeIn 0.3s ease-out;
+
+        }
+
+
+
+        @keyframes fadeIn {
+
+            0% { opacity: 0; }
+
+            100% { opacity: 1; }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="title">Pendaftaran Lomba</div>
+
+        <div class="logo-container">
+
+            <img src="images/logo.png" alt="Logo 1">
+
+            <img src="images/logo1.png" alt="Logo 2">
+
+            <img src="images/logo2.png" alt="Logo 3">
+
+        </div>
+
+    </header>
+
+
+
+    <div class="container" id="registrationForm">
+
+        <!-- Logo section (hanya satu logo, ditengah) -->
+
+        <img src="images/wajah-kerucut.png" alt="Logo" class="logo">
+
+
+
+        <!-- Formulir Pendaftaran -->
+
+            <form id="registrationFormData" action="https://docs.google.com/forms/d/e/1FAIpQLScCD_hIPV6VdZHUXe7J0v3PlaruipEqyJgtNv0N_FMtTntKSQ/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)">
+                       <!-- Nama Kelas -->
+                       
+            <div class="form-group">
+
+                <label for="class">Nama Kelas</label>
+
+                <input type="text" id="class" name="entry.1542267169" placeholder="Contoh: XII A" required oninput="resizeInput(this)">
+
+            </div>
+
+
+
+            <!-- Nama Peserta -->
+
+            <div class="form-group">
+
+                <label for="participant">Nama Peserta</label>
+
+                <input type="text" id="participant" name="entry.1992523913" placeholder="Masukkan nama lengkap" required>
+
+            </div>
+            <div class="form-group">
+
+                <label for="participant">No Urut</label>
+
+                <input type="text" id="participant" name="entry.1591173655" placeholder="Masukkan nama lengkap" required>
+
+            </div>
+
+            
+
+            <!-- Submit Button -->
+
+            <button type="submit" class="btn">Daftar Sekarang</button>
+
+        </form>
+
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+</div>
+        <!-- Deskripsi Cara Pendaftaran -->
+
+        <div class="description">
+
+            <h2>Cara Mendaftar</h2>
+
+            <p>Untuk mendaftar lomba ini, ikuti langkah-langkah berikut:</p>
+
+            <ol>
+
+                <li><strong>Isi Formulir Pendaftaran:</strong> Pada kolom pertama, masukkan <em>Nama Kelas</em> seperti "XII A". Pada kolom kedua, masukkan <em>Nama Peserta</em> lengkap Anda.</li>
+
+                <li><strong>Periksa Data Anda:</strong> Pastikan informasi yang dimasukkan sudah benar.</li>
+
+                <li><strong>Klik Tombol "Daftar Sekarang":</strong> Setelah memeriksa kembali, klik tombol "Daftar Sekarang" untuk mengirimkan formulir.</li>
+
+                <li><strong>Konfirmasi Pendaftaran:</strong> Setelah formulir terkirim, Anda akan melihat pop-up konfirmasi. Klik tombol "OK" untuk melanjutkan.</li>
+
+                <li><strong>Halaman Akan Diperbarui:</strong> Setelah klik "OK", halaman ini akan otomatis diperbarui dan pendaftaran Anda telah berhasil.</li>
+
+            </ol>
+
+            <p>Jika Anda membutuhkan bantuan, <a href="https://wa.me/6281234567890" class="contact-link" target="_blank">hubungi panitia lomba di WhatsApp</a>.</p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Modal Pop-up -->
+
+    <div id="confirmationModal">
+
+        <div class="modal-content">
+
+            <h2>Pendaftaran Anda Telah Berhasil!</h2>
+
+            <p>Terima kasih telah mendaftar. Halaman akan di-refresh setelah Anda klik OK.</p>
+
+            <button onclick="refreshPage()">OK</button>
+
+        </div>
+
+    </div>
+
+
+
+    
+
+
+
+    <script>
+
+        function handleSubmit(event) {
+            // Mencegah pengiriman form agar tidak langsung memuat halaman Google Form
+            event.preventDefault(); 
+
+            // Menampilkan modal pop-up
+            document.getElementById("confirmationModal").style.display = "block"; 
+            
+            // Menyembunyikan form agar tidak terlihat setelah submit
+            document.getElementById("registrationForm").style.display = "none"; 
+
+            // Mengirimkan form ke Google Form melalui iframe (sudah dilakukan otomatis oleh target="hidden_iframe")
+            setTimeout(function() {
+                var form = document.getElementById("registrationFormData");
+                form.submit(); // Kirim form secara normal ke Google Form
+            }, 500); // Delay 500ms untuk memberi waktu menampilkan modal
+        }
+
+
+    function refreshPage() {
+
+        // Refresh halaman setelah klik OK pada modal
+
+        window.location.href = 'index.html'; // Ganti dengan alamat halaman yang diinginkan
+
+    }
+
+
+
+
+
+
+
+
+
+        // Fungsi untuk menyesuaikan lebar input Nama Kelas berdasarkan panjang teks
+
+        function resizeInput(input) {
+
+            input.style.width = Math.max(input.value.length + 1, 10) + "ch"; // Menjamin lebar minimal 12 karakter
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

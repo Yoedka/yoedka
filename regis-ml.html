@@ -533,9 +533,36 @@
         <!-- Logo section (hanya satu logo, ditengah) -->
 
         <img src="images/ml.png" alt="Logo" class="logo">
-<div class="title">Pendaftaran Telah Usai</div>
-      </div>
+    <form id="registrationFormData" action="https://docs.google.com/forms/d/e/1FAIpQLSccuAqPd7F2BqNItbwovxyz5EsBBrC3LGWw9cYpEQQeeo-J5g/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)">
+                                     <!-- Nama Kelas -->
 
+            <div class="form-group">
+
+                <label for="class">Nama Kelas</label>
+
+                <input type="text" id="class" name="entry.1791271021" placeholder="Contoh: XII A" required oninput="resizeInput(this)">
+
+            </div>
+
+
+
+            <!-- Nama Peserta -->
+
+            <div class="form-group">
+
+                <label for="participant">ID Mobile Legend</label>
+
+                <input type="text" id="participant" name="entry.1938355554" placeholder="Masukkan ID Ml Mu" required>
+
+            </div>
+       
+            
+
+            <!-- Submit Button -->
+
+            <button type="submit" class="btn">Kirim Sekarang</button>
+
+        </form>
 
         <!-- Formulir Pendaftaran -->
 
